@@ -3,7 +3,7 @@
 The program loads volumes in 512x512 resolution and then presents them as a bitmap. Can freely navigate through the images. 
 There are 3 different views: axial, sagitall and coronal.
 
-Using the checkboxes in the right panel, there are 4 preview options:
+On the right side there are 4 checkboxes that do different previews:
 * Pixel average
 * First Hit
 * Max
