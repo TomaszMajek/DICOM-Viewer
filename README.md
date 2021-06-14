@@ -9,9 +9,8 @@ On the right side there are 4 checkboxes that do different previews:
 * Max
 * Region Growing Segmentation
 
----
 
-The Region Growing works as follows:
+**The Region Growing works as follows:**
 
 1. select an area in the Axial view
 2. click somewhere to mark the starting point
@@ -24,7 +23,7 @@ Also you can zoom-in any area on axial view.
 
 ---
 
-Image gallery
+**Image gallery**
 
 1. Main view
 ![main_view](https://lh3.googleusercontent.com/pw/ACtC-3caVSYz82An3siw1O1b-BJa8Y3EACvaD_aA6aBPZDdffqpaUgxaahy033_h1hfuuYyKZp6EyhtFBBt6ygJiHvL3HAtHHy_NZv4fTbsJHvkhPYPx55Qsfl2C3Jthrs_hmYfgHqePblrIQkCO8skn-sqP=w1200-h725-no?authuser=0)
