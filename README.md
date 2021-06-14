@@ -13,7 +13,7 @@ On the right side there are 4 checkboxes that do different previews:
 
 **The Region Growing works as follows:**
 
-1. select an area in the Axial view
+1. select an area in the Axial view to calculate some statistics
 2. click somewhere to mark the starting point
 3. click the Region Growing checkbox
 
