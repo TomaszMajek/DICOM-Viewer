@@ -28,7 +28,7 @@ Also you can zoom-in any area on axial view.
 **Image gallery**
 
 1. Main view
-![main_view](https://github.com/TomaszMajek/images-for-readme/blob/main/2021-06-14.png)
+![main_view](https://github.com/TomaszMajek/images-for-readme/blob/main/Main1.1.png)
 
 2. Pixel average
 ![pixel_average](https://github.com/TomaszMajek/images-for-readme/blob/main/2021-06-14%20(1).png)
