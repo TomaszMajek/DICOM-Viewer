@@ -44,5 +44,5 @@ Also you can zoom-in any area on axial view.
 ![region_growing_segmentation](https://github.com/TomaszMajek/images-for-readme/blob/main/2021-11-21%20(4).png)
 ![region_growing_segmentation](https://github.com/TomaszMajek/images-for-readme/blob/main/3.png)
 ![region_growing_segmentation](https://github.com/TomaszMajek/images-for-readme/blob/main/6.png)
-![region_growing_segmentation](https://github.com/TomaszMajek/images-for-readme/blob/main/7.png)
+![region_growing_segmentation](https://github.com/TomaszMajek/images-for-readme/blob/main/Zrzut%20ekranu%202021-11-22%20000235.png)
 
