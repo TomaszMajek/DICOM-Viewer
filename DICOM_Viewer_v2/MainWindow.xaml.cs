@@ -81,21 +81,46 @@ namespace DICOM_Viewer_v2
                     count++;
                 }
 
+                int min = -32000;
+                int max = 32000;
+
                 for (int x = pixelTag + 12; x < arrayBytes.Count; x += 2)
                 {
-                    string temp = arrayBytes[x + 1] + arrayBytes[x];
-                    short value = Convert.ToInt16(temp, 16);
-                    if (value == -2000)
+                    // min max, czy to short czy unsigned
+                    string pixel = arrayBytes[x].Length > 1 ?
+                        arrayBytes[x + 1] + arrayBytes[x] :
+                        arrayBytes[x + 1] + '0' + arrayBytes[x];   // parujemy bajty np. 7F+E0         
+
+                    short pixelValue = Convert.ToInt16(pixel, 16);
+
+                    if (pixelValue == -2000)
                     {
-                        value = 0;
+                        pixelValue = 0;
                     }
-                    arrayOrder.Add(value);
-                    arrayImage.Add(value);
+
+                    if (x == pixelTag + 12)
+                    {
+                        min = pixelValue;
+                        max = pixelValue;
+                    }
+
+                    if (min >= pixelValue)
+                    {
+                        min = pixelValue;
+                    }
+
+                    if (max <= pixelValue)
+                    {
+                        max = pixelValue;
+                    }
+
+                    arrayOrder.Add(pixelValue);
+                    arrayImage.Add(pixelValue);
                 }
 
                 int z = 0;
-                int min = -2000; // arrayOrder.Min() - na sztywno
-                int max = 7751; // arrayOrder.Max()
+                //int min = -2000; // arrayOrder.Min() - na sztywno
+                //int max = 7751; // arrayOrder.Max()
                 int range = max + min;
                 double sf = 255.0 / range;
 
@@ -530,7 +555,6 @@ namespace DICOM_Viewer_v2
             var positiveVisitedPixels = new List<Tuple<int, int>>();
             var toVisitPixels = new List<Tuple<int, int>>();
 
-
             // ustawiam punkt początkowy
             int row = (int)Y0, column = (int)X0;
             int posX = row, posY = column;
@@ -736,6 +760,8 @@ namespace DICOM_Viewer_v2
                 image1.Source = BitmapToImageSource(area);
             else 
                 bitmapRegionGrowing = BitmapToImageSource(area);
+
+
         }
 
 
