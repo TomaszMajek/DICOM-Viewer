@@ -320,7 +320,7 @@ namespace DICOM_Viewer_v2
             {
                 for (int n = 0; n < 512; n++)
                 {
-                    averageDataAxial_Int[0, m, n] /= 37; //powinno być 112, ale wychodzi ciemny obrazek więc 112*1/3
+                    averageDataAxial_Int[0, m, n] /= 112;
                     averageDataAxial_Byte[0, m, n] = (byte)averageDataAxial_Int[0, m, n];
                 }
             }
@@ -344,7 +344,7 @@ namespace DICOM_Viewer_v2
             {
                 for (int n = 0; n < 512; n++)
                 {
-                    averageDataSagittal_Int[0, m, n] /= 112;
+                    averageDataSagittal_Int[0, m, n] /= 512;
                     averageDataSagittal_Byte[0, m, n] = (byte)averageDataSagittal_Int[0, m, n];
                 }
             }
@@ -368,7 +368,7 @@ namespace DICOM_Viewer_v2
             {
                 for (int n = 0; n < 112; n++)
                 {
-                    averageDataCoronal_Int[0, m, n] /= 112;
+                    averageDataCoronal_Int[0, m, n] /= 512;
                     averageDataCoronal_Byte[0, m, n] = (byte)averageDataCoronal_Int[0, m, n];
                 }
             }
@@ -385,8 +385,6 @@ namespace DICOM_Viewer_v2
         {
             int LT = 20; //threshold
             int PT = 150;
-            double rescale_m = (255-0)/(PT-LT);
-            double rescale_c = LT * rescale_m;
 
             BoxFirstHit.IsChecked = true;
             // axial firsthit
@@ -400,7 +398,6 @@ namespace DICOM_Viewer_v2
                         if (database[i, j, k] >= LT && database[i, j, k] <= PT && firsthitAxial[0, j, k] == 0)
                         {
                             firsthitAxial[0, j, k] = database[i, j, k];
-                            firsthitAxial[0, j, k] = (byte)((firsthitAxial[0, j, k] * rescale_m) + rescale_c);
                         }
                     }
                 }
@@ -417,7 +414,6 @@ namespace DICOM_Viewer_v2
                         if (database[j, i, k] >= LT && database[j, i, k] <= PT && firsthitSagittal[0, j, k] == 0)
                         {
                             firsthitSagittal[0, j, k] = database[j, i, k];
-                            firsthitSagittal[0, j, k] = (byte)((firsthitSagittal[0, j, k] * rescale_m) + rescale_c);
                         }
                     }
                 }
@@ -434,7 +430,6 @@ namespace DICOM_Viewer_v2
                         if (database[k, j, i] >= LT && database[k, j, i] <= PT && firsthitCoronal[0, j, k] == 0)
                         {
                             firsthitCoronal[0, j, k] = database[k, j, i];
-                            firsthitCoronal[0, j, k] = (byte)((firsthitCoronal[0, j, k] * rescale_m) + rescale_c);
                         }
                     }
                 }
@@ -604,7 +599,7 @@ namespace DICOM_Viewer_v2
             // właściwy algorytm
             while (toVisitPixels.Count > 0)
             {
-                double threshold = 0.015;
+                double threshold = 0.2;
 
                 // biorę pierwszy element listy
                 // i ustawiam pozycję piksela do sprawdzenia
