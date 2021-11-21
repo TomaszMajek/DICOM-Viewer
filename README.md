@@ -1,13 +1,13 @@
-# DICOM Viewer - Simple medical image processing
+# DICOM Viewer - Simple medical image processing (New version soon)
 
 The program loads volumes in 512x512 resolution and then presents them as a bitmap. Can freely navigate through the images. 
 There are 3 different views: axial, sagitall and coronal.
 
 On the right side there are 4 checkboxes that do different previews:
 * Pixel average
-* First Hit
+* First Hit (new version bugged it a bit, it will work soon)
 * Max
-* Region Growing Segmentation
+* Region Growing Segmentation (new version also bugged it a bit)
 
 
 
@@ -28,7 +28,7 @@ Also you can zoom-in any area on axial view.
 **Image gallery**
 
 1. Main view
-![main_view](https://github.com/TomaszMajek/images-for-readme/blob/main/2021-06-14.png)
+![main_view](https://github.com/TomaszMajek/images-for-readme/blob/main/Main1.1.png)
 
 2. Pixel average
 ![pixel_average](https://github.com/TomaszMajek/images-for-readme/blob/main/2021-06-14%20(1).png)
